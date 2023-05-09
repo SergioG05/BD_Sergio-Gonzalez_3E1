@@ -1,0 +1,7 @@
+{
+  "name": "BD_Gonzalez_3E1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
