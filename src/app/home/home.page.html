@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Restaurante XYZ
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Menú</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list class="lista-platos">
+    <ion-item *ngFor="let plato of platos" class="item-plato">
+      <ion-thumbnail slot="start">
+        <img [src]="plato.imagen" alt="Imagen del plato">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{plato.nombre}}</h2>
+        <p>{{plato.descripcion}}</p>
+        <p>Precio: {{plato.precio}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="primary" (click)="realizarReservacion()">Hacer una reservación</ion-button>
 </ion-content>
+
